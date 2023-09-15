@@ -29,10 +29,13 @@ public class MainActivity extends AppCompatActivity {
                 int age = Integer.parseInt(TV_Age.getText().toString());
                 String id = TV_ID.getText().toString();
 
+                MyData mydata = new MyData(name, age, id);
+
                 Bundle bundle = new Bundle();
-                bundle.putString("Name", name);
+                /*bundle.putString("Name", name);
                 bundle.putInt("Age", age);
-                bundle.putString("ID", id);
+                bundle.putString("ID", id);*/
+                bundle.putSerializable("MyData", mydata);
 
                 Intent intent = new Intent(MainActivity.this, SubActivity.class);
                 intent.putExtras(bundle);
